@@ -35,6 +35,42 @@ int main()
 	cout << "       Your total bill $" << finalbill << endl;
 
 
+	//Q2
+
+	int a, b, c, h, length1, width, rPerimeter, tPerimeter, tArea, rArea;
+	cout << "Enter the values of a,b,c, and h  for the triangle: " << endl;
+	cin >> a >> b >> c >> h;
+	cout << "Enter the length and the width of the rectangle: " << endl;
+	cin >> length1 >> width;
+	_asm {
+		// Calculate tPerimeter
+		mov eax, a;				// eax == a
+		add eax, b;				// eax == a + b
+		add eax, c;				// eax == a + b + c
+		mov tPerimeter, eax;	// tPerimeter == a + b + c
+
+		// Calculate rPerimeter
+		mov eax, length1;		// eax == length
+		add eax, width;			// eax == length + width
+		add eax, eax;			// eax == (2 * length) + ( 2 * width)
+		mov rPerimeter, eax;	// rPerimeter == (2 * length) + ( 2 * width)
+
+		// Calculate rArea
+		mov eax, length1;		// eax = length
+		imul eax, width;		// eax = length * width
+		mov rArea, eax;			// rArea = length * width
+
+		// Calculate tArea
+		mov eax, c;
+		imul eax, h;
+		cdq;
+		idiv 
+		mov tArea,eax;
+	}
+	cout << a << b << c << h << length1 << width << endl;
+	cout << rPerimeter << "     " << rArea << endl;
+	cout << tPerimeter << "     " << tArea << endl;
+
 
 
 	// Q4
