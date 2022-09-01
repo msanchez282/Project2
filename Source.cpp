@@ -42,6 +42,7 @@ int main()
 	cin >> a >> b >> c >> h;
 	cout << "Enter the length and the width of the rectangle: " << endl;
 	cin >> length1 >> width;
+	short two = 2;
 	_asm {
 		// Calculate tPerimeter
 		mov eax, a;				// eax == a
@@ -64,7 +65,7 @@ int main()
 		mov eax, c;
 		imul eax, h;
 		cdq;
-		idiv 
+		idiv two;
 		mov tArea,eax;
 	}
 	cout << a << b << c << h << length1 << width << endl;
