@@ -66,7 +66,7 @@ int main()
 		imul eax, h;
 		cdq;
 		idiv two;
-		mov tArea,eax;
+		mov tArea, eax;
 	}
 	cout << a << b << c << h << length1 << width << endl;
 	cout << rPerimeter << "     " << rArea << endl;
