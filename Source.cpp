@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+// CPSC 240-05
+// 
+// Matthew Sanchez and Alexander Gomez
+//
+
 int main()
 {
 	//Q1
