@@ -62,15 +62,38 @@ int main()
 		mov rArea, eax;			// rArea = length * width
 
 		// Calculate tArea
-		mov eax, c;
-		imul eax, h;
-		cdq;
-		idiv two;
-		mov tArea, eax;
+		mov eax, c;				// eax == c
+		mov ebx, h;				// ebx == h
+		imul ebx;				// eax == c * h
+		cdq;					// edx:eax == c * h
+		idiv two;				// eax == quotient, edx == remainder
+		mov tArea, eax;			// tArea == quotient
 	}
-	cout << a << b << c << h << length1 << width << endl;
-	cout << rPerimeter << "     " << rArea << endl;
-	cout << tPerimeter << "     " << tArea << endl;
+	cout << "Triangle" << endl;
+	cout << "    Area........................................." << tArea << endl;
+	cout << "    Perimeter...................................." << tPerimeter << endl;
+	cout << "Rectangle" << endl;
+	cout << "    Area........................................." << rArea << endl;
+	cout << "    Perimeter...................................." << rPerimeter << endl;
+
+
+
+	// Q3
+
+	short C, F, five, nine;
+	five = 5;
+	nine = 9;
+	cout << "Enter temperature in Fahrenheight: ";
+	cin >> F;
+	_asm {
+		mov ax, F;				// ax == F
+		sub ax, 32;				// ax == F - 32
+		imul five;				// ax == 5(F - 32)
+		cwd;					// dx:ax == 5(F -32)
+		idiv nine;				// ax == quotient, dx == remainder
+		mov C, ax;				// ax == quotient
+	}
+	cout << F << "F is " << C << "C" << endl;
 
 
 
